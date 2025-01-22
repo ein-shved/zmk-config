@@ -20,9 +20,9 @@
         src = nixpkgs.lib.sourceFilesBySuffices self [ ".board" ".cmake" ".conf" ".defconfig" ".dts" ".dtsi" ".json" ".keymap" ".overlay" ".shield" ".yml" "_defconfig" ];
 
         board = "nice_nano_v2";
-        shield = "lily58_%PART%";
+        shield = "ergo_s1_oe_%PART%";
 
-        zephyrDepsHash = "sha256-1SPNOiowdGSLrSLnaElACu5/J84KcbTmIgFd9sE9W2s=";
+        zephyrDepsHash = "sha256-UpeTdVxbxP7JFzQ4oe4PVgsRMQMbJ+OvqbhTmuMDm5A=";
 
         meta = {
           description = "ZMK firmware";

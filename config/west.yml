@@ -2,10 +2,12 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: shved
+      url-base: https://github.com/ein-shved
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: 4882a62c408649a68a47f46b8a6ba350e58589e3  # main
+      remote: shved
+      revision: c56792ff10d456ec54752a510cd3a0cf62f2d544  # Ergo_S-1_OE
       import: app/west.yml
     - name: zephyr
       remote: zmkfirmware
