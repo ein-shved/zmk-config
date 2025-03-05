@@ -1,0 +1,56 @@
+/*
+ * Copyright (c) 2021 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/outputs.h>
+
+ #define DEFAULT 0
+ #define FN  1
+
+/ {
+       keymap {
+              compatible = "zmk,keymap";
+
+              default_layer {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// | ESC  |  1   |  2   |  3   |  4   |  5   |                                                   |  6   |  7   |  8   |  9   |  0   | FN   |
+// | PSCR |  Q   |  W   |  E   |  R   |  T   |                                                   |  Y   |  U   |  I   |  O   |  P   | EQL  |
+// | TAB  |  A   |  S   |  D   |  F   |  G   |                                                   |  H   |  J   |  K   |  L   | SCLN | QUOT |
+// | ALT  |  Z   |  X   |  C   |  V   |  B   |      | HOME | END  |         | PGUP | PGDN |      |  N   |  M   | COMM | DOT  | SLSH | MINS |
+//        | GRV  | BSLS | LEFT | RGHT |      | SHFT | BSPS | DEL  |         | INS  | ENT  | SPC  |      |  UP  |  DN  | LBKT | RBKT |
+//                                                         | CTRL |         | META |
+                     bindings = <
+        &kp ESC    &kp N1  &kp N2   &kp N3   &kp N4    &kp N5                                                                    &kp N6    &kp N7    &kp N8    &kp N9     &kp N0    &mo 1
+        &kp PSCRN  &kp Q   &kp W    &kp E    &kp R     &kp T                                                                     &kp Y     &kp U     &kp I     &kp O      &kp P     &kp EQUAL
+        &kp TAB    &kp A   &kp S    &kp D    &kp F     &kp G                                                                     &kp H     &kp J     &kp K     &kp L      &kp SEMI  &kp SQT
+        &kp LALT   &kp Z   &kp X    &kp C    &kp V     &kp B               &kp HOME  &kp END      &kp PG_UP &kp PG_DN            &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH &kp MINUS
+                   &kp GRAVE &kp BSLH &kp LEFT &kp RIGHT         &kp LSHFT &kp BSPC  &kp DEL      &kp INS   &kp ENTER &kp SPACE           &kp UP    &kp DOWN  &kp LBKT   &kp RBKT
+                                                                                     &kp LCTRL    &kp LGUI
+                     >;
+              };
+              fn_layer {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |BT_CLR|  F1  |  F2  |  F3  |  F4  |  F5  |                                                   |      | NLCK |  =   |  /   |  *   | FN   |
+// |      |  F6  |  F7  |  F8  |  F9  |  F10 |                                                   |      |  7   |  8   |  9   |  -   |      |
+// |      |      |      |      |      |      |                                                   |      |  4   |  5   |  6   |  +   |      |
+// |      |      |      |      |      | PTSC |      |      |      |         |      |      |      |      |  1   |  2   |  3   | ENT  |      |
+//        |      | INS  |      |      |      |      |      |      |         |      |      |      |      |      |      |  .   | ENT  |
+//                                                         |      |         |      |
+                     bindings = <
+        &bt BT_CLR &kp F1  &kp F2   &kp F3   &kp F4    &kp F5                                                                    &trans    &kp KP_NUM&kp EQL   &kp SLASH &kp STAR  &trans
+        &trans     &kp F6  &kp F7   &kp F8   &kp F9    &kp F10                                                                   &trans    &kp N7    &kp N8    &kp N9    &kp MINUS &trans
+        &trans     &trans  &trans   &trans   &trans    &trans                                                                    &trans    &kp N4    &kp N5    &kp N6    &kp PLUS  &trans
+        &trans     &trans  &trans   &trans   &kp PSCRN &trans              &kp F11   &kp F12       &trans    &trans              &trans    &kp N1    &kp N2    &kp N3    &kp ENTER &trans
+                   &trans  &kp CAPS &trans   &trans              &trans    &trans    &trans        &trans    &trans    &trans              &trans    &trans    &kp DOT   &kp ENTER
+                                                                                     &trans        &trans
+                     >;
+              };
+
+    };
+};
