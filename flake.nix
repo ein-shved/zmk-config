@@ -42,7 +42,7 @@
           board = "nice_nano_v2";
           shield = "ergo_s1_oe_%PART%";
 
-          zephyrDepsHash = "sha256-hJpLU2OhuZefzKs1cgQqIqgszdIiEz0ZoaPu/dkODgE=";
+          zephyrDepsHash = "sha256-xYOFxbuXu5L91Uw34kWXUki7OQPEkf3fYxrPdXjREPk=";
 
           meta = {
             description = "ZMK firmware";
